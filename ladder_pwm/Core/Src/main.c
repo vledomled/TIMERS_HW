@@ -43,8 +43,6 @@
 TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN PV */
-uint16_t max_val = 0;
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -54,7 +52,7 @@ static void MX_TIM1_Init(void);
 /* USER CODE BEGIN PFP */
 void brightness(uint8_t bright_perc, uint8_t channel)  // modify brightness in percent
 {
-	max_val = TIM1 -> ARR;
+	uint16_t max_val = TIM1 -> ARR;
 	uint16_t ccr_value = (uint16_t)((bright_perc/100.0)*max_val);
 
 	volatile uint32_t* channels[] = {&TIM1->CCR1, &TIM1->CCR2, &TIM1->CCR3, &TIM1->CCR4};
