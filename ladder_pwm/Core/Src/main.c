@@ -119,7 +119,6 @@ int main(void)
 	{
 		brightness(i, 1);
 		brightness(i, 2);
-
 		HAL_Delay(50);
 	}
   }
